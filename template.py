@@ -8,13 +8,13 @@ project_name = 'plantDiseaseDetection'
 
 list_of_files = [
     '.github/workflows/.gitkeep', # For github action
-    f'{project_name}/__init__.py',
-    f'{project_name}/components/__init__.py',
-    f'{project_name}/utils/__init__.py',
-    f'{project_name}/config/__init__.py',
-    f'{project_name}/pipeline/__init__.py',
-    f'{project_name}/entity/__init__.py',
-    f'{project_name}/constants/__init__.py',
+    f'src/{project_name}/__init__.py',
+    f'src/{project_name}/components/__init__.py',
+    f'src/{project_name}/utils/__init__.py',
+    f'src/{project_name}/config/__init__.py',
+    f'src/{project_name}/pipeline/__init__.py',
+    f'src/{project_name}/entity/__init__.py',
+    f'src/{project_name}/constants/__init__.py',
     f'notebook/{project_name}.ipynb',
     'config/config.yaml',
     'params.yaml',
