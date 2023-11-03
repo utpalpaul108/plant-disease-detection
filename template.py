@@ -9,6 +9,7 @@ project_name = 'plantDiseaseDetection'
 list_of_files = [
     '.github/workflows/.gitkeep', # For github action
     f'src/{project_name}/__init__.py',
+    f'src/{project_name}/logger/__init__.py',
     f'src/{project_name}/components/__init__.py',
     f'src/{project_name}/utils/__init__.py',
     f'src/{project_name}/config/__init__.py',
