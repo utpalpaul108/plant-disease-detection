@@ -1,0 +1,9 @@
+artifacts_root: artifacts
+
+# For data ingestion
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://www.kaggle.com/datasets/emmarex/plantdisease
+  raw_dataset_dir: artifacts/data_ingestion/raw_dataset
+  dataset_dir: artifacts/data_ingestion/dataset
+

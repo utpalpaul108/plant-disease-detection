@@ -161,3 +161,12 @@ cython_debug/
 
 # VSCode
 .vscode/
+
+# Log files
+logs/
+
+# kaggle configuration
+kaggle.json
+
+# artifacts folder
+artifacts/

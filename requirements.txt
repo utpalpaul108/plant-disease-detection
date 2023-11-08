@@ -13,4 +13,5 @@ types-PyYAML
 scipy
 Flask
 Flask-Cors
+opendatasets # Optional (if you want to download datasets from Kaggle)
 -e . # Create local package by installing setup.py
