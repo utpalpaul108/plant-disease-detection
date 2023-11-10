@@ -1,6 +1,6 @@
 from plantDiseaseDetection.constants import *
 from plantDiseaseDetection.utils import read_yaml, create_directories
-from plantDiseaseDetection.entity import DataIngestionConfig
+from plantDiseaseDetection.entity import DataIngestionConfig, PrepareBaseModelConfig
 
 # Configuration Manager
 class ConfigurationManager:
@@ -23,3 +23,22 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+    
+    def get_prepare_base_model_config(self) -> PrepareBaseModelConfig:
+
+        config = self.config.prepare_base_model
+        create_directories([config.root_dir])
+        
+        prepare_base_model_config = PrepareBaseModelConfig(
+            root_dir = config.root_dir,
+            base_model_path = config.base_model_path,
+            updated_base_model_path = config.updated_base_model_path,
+            params_image_size = self.params.IMAGE_SIZE,
+            params_learning_rate = self.params.LEARNING_RATE,
+            params_dropout_rate = self.params.DROPOUT_RATE,
+            params_include_top = self.params.INCLUDE_TOP,
+            params_weights = self.params.WEIGHTS,
+            params_classes = self.params.CLASSES
+        )
+
+        return prepare_base_model_config
