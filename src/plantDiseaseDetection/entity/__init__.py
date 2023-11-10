@@ -1,0 +1,1 @@
+from plantDiseaseDetection.entity.config_entity import DataIngestionConfig
