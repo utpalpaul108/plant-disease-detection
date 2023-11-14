@@ -2,6 +2,7 @@ from plantDiseaseDetection.constants import *
 from plantDiseaseDetection.components.data_ingestion import DataIngestion
 from plantDiseaseDetection.components.prepare_base_model import PrepareBaseModel
 from plantDiseaseDetection.components.prepare_callback import PrepareCallback
+from plantDiseaseDetection.components.model_training import Traing
 from plantDiseaseDetection.config import ConfigurationManager
 
 
@@ -23,7 +24,16 @@ class TrainingPipeline:
             # Prepare Callbacks
             prepare_callbacks_config = config.get_prepare_callbacks_config()
             prepare_callback = PrepareCallback(config=prepare_callbacks_config)
-            prepare_callback.get_tb_ckpt_callback()
+            callback_list = prepare_callback.get_tb_ckpt_callback()
+
+            # Model Training
+            training_config = config.get_training_config()
+            training = Traing(config=training_config)
+            training.get_base_model()
+            training.train_valid_generator()
+            training.train(
+                callback_list = callback_list
+            )
         
         except Exception as e:
             raise e
