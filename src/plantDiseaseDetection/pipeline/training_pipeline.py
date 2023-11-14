@@ -3,6 +3,7 @@ from plantDiseaseDetection.components.data_ingestion import DataIngestion
 from plantDiseaseDetection.components.prepare_base_model import PrepareBaseModel
 from plantDiseaseDetection.components.prepare_callback import PrepareCallback
 from plantDiseaseDetection.components.model_training import Traing
+from plantDiseaseDetection.components.model_evaluation import Evaluate
 from plantDiseaseDetection.config import ConfigurationManager
 
 
@@ -31,9 +32,12 @@ class TrainingPipeline:
             training = Traing(config=training_config)
             training.get_base_model()
             training.train_valid_generator()
-            training.train(
-                callback_list = callback_list
-            )
+            training.train(callback_list = callback_list)
+
+            #Model Evaluation
+            val_config = config.get_validation_config()
+            evaluation = Evaluate(config=val_config)
+            evaluation.evaluation()
         
         except Exception as e:
             raise e

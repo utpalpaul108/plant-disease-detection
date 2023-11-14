@@ -1,6 +1,6 @@
 from plantDiseaseDetection.constants import *
 from plantDiseaseDetection.utils import read_yaml, create_directories
-from plantDiseaseDetection.entity import DataIngestionConfig, PrepareBaseModelConfig, PrepareCallbacksConfig, TrainingConfig
+from plantDiseaseDetection.entity import DataIngestionConfig, PrepareBaseModelConfig, PrepareCallbacksConfig, TrainingConfig, EvaluationConfig
 import os
 
 # Configuration Manager
@@ -80,3 +80,16 @@ class ConfigurationManager:
         )
 
         return training_config
+    
+    def get_validation_config(self) -> EvaluationConfig:
+        
+        eval_config = EvaluationConfig(
+            path_of_model =  Path(self.config.training.trained_model_path),
+            training_data = Path(self.config.data_ingestion.dataset_dir),
+            all_params = self.params,
+            params_image_size = self.params.IMAGE_SIZE,
+            params_batch_size = self.params.BATCH_SIZE,
+            evaluation_score_path = Path(self.config.evaluation.evaluation_score_path)
+        )
+        
+        return eval_config
