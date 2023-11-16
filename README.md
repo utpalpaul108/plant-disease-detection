@@ -46,18 +46,27 @@ pip install -r requirements.txt
 ```
 
 
+### STEP 03 : install the requirements
+
+For downloading the Kaggle dataset, place the `kaggle.json` file (Kaggle API credentials) in your root directory.
+
+Finally, run the following command to run your application:
 ```bash
-# Finally run the following command
 python app.py
 ```
 
+### STEP 04 : run the application
 
-Now,open up your local host with a port like that.
+Now,open up your local host with a port like that on your web browser.
 ```bash
 http://localhost:8080
 ```
-
-
+### STEP 05 : train the model
+Before predicting, you have to train your model with your own dataset.
+```bash
+http://localhost:8080/train
+```
+After completing the training, you can now detect any plant disease from the plant leaf image, according to your training datasets.
 
 
 ## AWS-CICD-Deployment-with-Github-Actions
