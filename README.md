@@ -14,7 +14,7 @@
 
 ## Dataset
 
-* You can use any dataset (including the Kaggle dataset) that is supported by [opendatasets] (https://github.com/JovianHQ/opendatasets). Just place the URL of the dataset in `config/config.yaml/data_ingestion/source_URL` 
+* You can use any dataset (including the Kaggle dataset) that is supported by [opendatasets](https://github.com/JovianHQ/opendatasets). Just place the URL of the dataset in `config/config.yaml/data_ingestion/source_URL` 
 * If you want to use your custom dataset, just place it inside the `artifacts/data_ingestion/dataset` folder or any other custom folder that you have to mention in `config/config.yaml/data_ingestion/dataset_dir` 
 
 ## Steps to run
@@ -51,8 +51,12 @@ pip install -r requirements.txt
 python app.py
 ```
 
+
 Now,open up your local host with a port like that.
-`http://localhost:8080`
+```bash
+http://localhost:8080
+```
+
 
 
 
