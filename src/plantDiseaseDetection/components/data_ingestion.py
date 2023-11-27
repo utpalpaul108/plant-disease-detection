@@ -32,6 +32,7 @@ class DataIngestion:
     def _preprocess_dataset(self):
         if os.path.exists(self.config.raw_dataset_dir):
             try:
+                create_directories([self.config.dataset_dir])
                 for root, dirs, files in os.walk(self.config.raw_dataset_dir):
                     for file in files:
                         file_path = os.path.join(root, file)

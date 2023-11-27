@@ -1,11 +1,4 @@
-# <div align='center'>Plant Disease Detection 🚀</div>
-
-
-## Examples
-
-<img src="examples/example_01.png" width="300">&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="examples/example_02.png" width="300">
-
+# Plant Disease Detection
 
 ## Workflows
 
@@ -24,16 +17,14 @@
 * You can use any dataset (including the Kaggle dataset) that is supported by [opendatasets](https://github.com/JovianHQ/opendatasets). Just place the URL of the dataset in `config/config.yaml/data_ingestion/source_URL` 
 * If you want to use your custom dataset, just place it inside the `artifacts/data_ingestion/dataset` folder or any other custom folder that you have to mention in `config/config.yaml/data_ingestion/dataset_dir` 
 
+## Steps to run
 
-
-## <div style="padding-top: 20px" align="center"> Steps to run </div>
-
-<div style="padding-bottom:10px"><b>STEP 00 :</b> Clone the repository</div>
+### STEP 00 : Clone the repository
 
 ```bash
-https://github.com/utpal108/waste-detection-using-yoloV5
+https://github.com/utpal108/plant-disease-detection
 ```
-<div style="padding-top:10px"><b>STEP 01 :</b> Create a virtial environment after opening the repository</div>
+### STEP 01 : Create a virtial environment after opening the repository
 
 Using Anaconda Virtual Environments
 
@@ -48,11 +39,15 @@ python3.10 -m venv venv
 source venv/bin/activate
 ```
 
-<div style="padding-top:10px; padding-bottom:10px"><b>STEP 02 :</b> Install the requirements</div>
 
+### STEP 02 : install the requirements
 ```bash
 pip install -r requirements.txt
 ```
+
+
+### STEP 03 : install the requirements
+
 For downloading the Kaggle dataset, place the `kaggle.json` file (Kaggle API credentials) in your root directory.
 
 Finally, run the following command to run your application:
@@ -60,14 +55,13 @@ Finally, run the following command to run your application:
 python app.py
 ```
 
-<div style="padding-top:10px"><b>STEP 03 :</b> Run the application</div>
+### STEP 04 : run the application
 
 Now,open up your local host with a port like that on your web browser.
 ```bash
 http://localhost:8080
 ```
-<div style="padding-top:10px"><b>STEP 04 :</b> Train the model</div>
-
+### STEP 05 : train the model
 Before predicting, you have to train your model with your own dataset.
 ```bash
 http://localhost:8080/train
@@ -75,12 +69,11 @@ http://localhost:8080/train
 After completing the training, you can now detect any plant disease from the plant leaf image, according to your training datasets.
 
 
-## <div style="padding-top: 20px" align="center"> AWS CICD Deployment With Github Actions </div>
+## AWS-CICD-Deployment-with-Github-Actions
 
+### STEP 00 : Login to AWS console.
 
-**STEP 00 :** Login to AWS console.
-
-**STEP 01 :** Create IAM user for deployment
+### STEP 01 : Create IAM user for deployment
 
 	#with specific access
 
@@ -108,14 +101,13 @@ After completing the training, you can now detect any plant disease from the pla
 	2. AmazonEC2FullAccess
 
 	
-**STEP 02 :** Create ECR repo to store/save docker image
-
+### STEP 02 : Create ECR repo to store/save docker image
     - Save the URI: 681776806933.dkr.ecr.us-east-2.amazonaws.com/plant-disease-detection
 
 	
-**STEP 03 :** Create EC2 machine (Ubuntu) 
+### STEP 03 : Create EC2 machine (Ubuntu) 
 
-**STEP 04 :** Open EC2 and Install docker in EC2 Machine:
+### STEP 04 : Open EC2 and Install docker in EC2 Machine:
 	
 	
 	#optinal
@@ -134,10 +126,11 @@ After completing the training, you can now detect any plant disease from the pla
 
 	newgrp docker
 	
-**STEP 05 :** Configure EC2 as self-hosted runner:
+### STEP 05 : Configure EC2 as self-hosted runner:
     setting>actions>runner>new self hosted runner> choose os> then run command one by one
 
-**STEP 06 :** Setup github secrets:
+
+### STEP 06 : Setup github secrets:
 
     AWS_ACCESS_KEY_ID=
 

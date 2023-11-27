@@ -8,7 +8,7 @@ from keras.preprocessing.image import load_img, img_to_array
 import numpy as np
 import os
 
-class PlantDisease:
+class PredictionPipeline:
 
     def __init__(self, filename):
         self.filename = filename

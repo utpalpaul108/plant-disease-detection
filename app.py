@@ -1,7 +1,8 @@
 from flask import Flask, request, render_template, jsonify
 from flask_cors import CORS, cross_origin
 from plantDiseaseDetection.utils import decodeImage
-from plantDiseaseDetection.pipeline.prediction_pipeline import PlantDisease
+from plantDiseaseDetection.pipeline.training_pipeline import TrainingPipeline
+from plantDiseaseDetection.pipeline.prediction_pipeline import PredictionPipeline
 from plantDiseaseDetection.constants import *
 from plantDiseaseDetection.utils import read_yaml, create_directories
 import os
@@ -22,8 +23,9 @@ def home():
 @app.route('/train', methods=['GET'])
 @cross_origin()
 def trainRoute():
-    os.system('python main.py')
-    return 'Training done successfully'
+    training_pipeline = TrainingPipeline()
+    training_pipeline.train()
+    return 'Model trained successfully'
 
 
 @app.route('/predict', methods=['POST'])
@@ -34,7 +36,7 @@ def predictRoute():
     create_directories([prediction_config.root_dir])
 
     file_name = os.path.join(prediction_config.root_dir, 'inputImage.jpg')
-    plant_disease_classifier = PlantDisease(file_name)
+    plant_disease_classifier = PredictionPipeline(file_name)
 
     image = request.json['image']
     decodeImage(image, file_name)
