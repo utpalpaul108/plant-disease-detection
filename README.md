@@ -3,8 +3,8 @@
 
 ## Examples
 
-<img src="examples/example_01.png" width="300">&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="examples/example_02.png" width="300">
+<img src="examples/example_01.png" width="320">&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="examples/example_02.png" width="320">
 
 
 ## Workflows
